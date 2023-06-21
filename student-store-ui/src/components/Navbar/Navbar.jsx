@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../../globals.css';
 import CodePathLogo from '../../assets/images/codepathLogo.png';
-import { listItem } from './styles';
+import { listItem } from '../../assets/styles';
 
 export default function Navbar() {
   return (
