@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import { spectacularTitle, utilityButtons } from '../../assets/styles';
 import merchIcon from '../../assets/images/merchandise.png';
@@ -14,6 +14,35 @@ import { FiShoppingCart } from 'react-icons/fi';
 import Categories from './homeComponents/CategoriesMenu';
 
 export default function Home() {
+  const options = [
+    {
+      title: 'All Categories',
+      index: 1,
+    },
+    {
+      title: 'Clothing',
+      index: 2,
+    },
+    {
+      title: 'Food',
+      index: 3,
+    },
+    {
+      title: 'Accessories',
+      index: 4,
+    },
+    {
+      title: 'Tech',
+      index: 5,
+    },
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState(options[0]);
+
+  const handleOptionClick = (option) => {
+    setSelectedCategory(option);
+  };
+
   return (
     <div className='home gap-4'>
       {/* Spectacular */}
@@ -54,7 +83,11 @@ export default function Home() {
         </button>
         {/* Categories menu */}
       </div>
-      <Categories />
+      <Categories
+        options={options}
+        selectedOption={selectedCategory}
+        handleOptionClick={handleOptionClick}
+      />
     </div>
   );
 }
