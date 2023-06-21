@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
+import Categories from './homeComponents/CategoriesMenu';
 
 export default function Home() {
   return (
@@ -51,7 +52,9 @@ export default function Home() {
           <FiShoppingCart />
           <h1 className='text-xl font-semibold'>Cart</h1>
         </button>
+        {/* Categories menu */}
       </div>
+      <Categories />
     </div>
   );
 }
