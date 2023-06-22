@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
-import { spectacularTitle, utilityButtons } from '../../assets/styles';
+import { spectacularTitle, utilityButtons, aboutP } from '../../assets/styles';
 import merchIcon from '../../assets/images/merchandise.png';
 import {
   InputGroup,
@@ -12,6 +12,9 @@ import {
 import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
 import Categories from './homeComponents/CategoriesMenu';
+import axios from 'axios';
+import Card from './homeComponents/Card';
+import CodePathLogo from '../../assets/images/codepathLogo.png';
 
 export default function Home() {
   const options = [
@@ -38,6 +41,22 @@ export default function Home() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(options[0]);
+  const [products, setProducts] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        'https://codepath-store-api.herokuapp.com/store'
+      );
+      setProducts(response.data.products);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+    console.log(products);
+  }, []);
 
   const handleOptionClick = (option) => {
     setSelectedCategory(option);
@@ -88,6 +107,43 @@ export default function Home() {
         selectedOption={selectedCategory}
         handleOptionClick={handleOptionClick}
       />
+      <div
+        id='products-grid'
+        className='w-2/3 grid grid-cols-4 gap-4 justify-self-center m-4'
+      >
+        {products.length > 0 ? (
+          products.map((product) => <Card key={product.id} props={product} />)
+        ) : (
+          <p className='text-3xl font-bold'>Loading...</p>
+        )}
+      </div>
+      {/* About */}
+      <p className='text-4xl font-bold mt-4'>About</p>
+      <div
+        id='about'
+        className='w-2/3 h-[400px] rounded-md flex justify-center items-center overflow-hidden'
+      >
+        <div className='text-md font-light bg-slate-100 h-full w-2/3 px-8 py-20'>
+          <p className={aboutP}>
+            The codepath student store offers great products at great prices
+            from a great team and for a great cause.
+          </p>
+          <br />
+          <p className={aboutP}>
+            We've searched far and wide for items that perk the interests of
+            even the most eccentric students and decided to offer them all here
+            in one place.
+          </p>
+          <br />
+          <p className={aboutP}>
+            All proceeds go towards bringing high quality CS education to
+            college students around the country.
+          </p>
+        </div>
+        <div className='flex justify-center items-center h-full w-1/3 bg-green-700'>
+          <img src={CodePathLogo} alt='' className='h-5/6' />
+        </div>
+      </div>
     </div>
   );
 }

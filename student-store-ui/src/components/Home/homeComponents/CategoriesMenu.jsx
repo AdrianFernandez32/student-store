@@ -12,7 +12,7 @@ const Categories = ({ options, selectedOption, handleOptionClick }) => {
       </Button>
       {options.map((option) => {
         let underLine;
-        if (option === selectedOption) {
+        if (option.index === selectedOption.index) {
           underLine = 'border-b border-green-500 font-semibold';
         } else {
           underLine = 'font-semibold';
@@ -20,7 +20,7 @@ const Categories = ({ options, selectedOption, handleOptionClick }) => {
         return (
           <ScaleFade key={option.index} initialScale={0.9} in={isOpen}>
             <Box
-              p='10px'
+              p='5px'
               color='black'
               mt='12px'
               bg='teal.500'
