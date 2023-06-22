@@ -13,7 +13,7 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Home />
-          <Sidebar />
+          {/* <Sidebar /> */}
         </main>
       </BrowserRouter>
     </div>

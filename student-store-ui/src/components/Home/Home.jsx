@@ -21,6 +21,7 @@ import axios from 'axios';
 import Card from './homeComponents/Card';
 import CodePathLogo from '../../assets/images/codepathLogo.png';
 import GirlModel from '../../assets/images/student.png';
+import Footer from './homeComponents/Footer';
 
 export default function Home() {
   const options = [
@@ -178,6 +179,8 @@ export default function Home() {
         </div>
         <img src={GirlModel} alt='' className='h-full mt-5' />
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
