@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import { spectacularTitle, utilityButtons, aboutP } from '../../assets/styles';
+import {
+  spectacularTitle,
+  utilityButtons,
+  aboutP,
+  contactInfo,
+} from '../../assets/styles';
 import merchIcon from '../../assets/images/merchandise.png';
 import {
   InputGroup,
@@ -15,6 +20,7 @@ import Categories from './homeComponents/CategoriesMenu';
 import axios from 'axios';
 import Card from './homeComponents/Card';
 import CodePathLogo from '../../assets/images/codepathLogo.png';
+import GirlModel from '../../assets/images/student.png';
 
 export default function Home() {
   const options = [
@@ -143,6 +149,34 @@ export default function Home() {
         <div className='flex justify-center items-center h-full w-1/3 bg-green-700'>
           <img src={CodePathLogo} alt='' className='h-5/6' />
         </div>
+      </div>
+      {/* Contact us */}
+      <p className='text-4xl font-bold mt-4'>Contact Us</p>
+      <div
+        id='about'
+        className='w-2/3 h-[400px] rounded-md flex justify-center items-center overflow-hidden bg-gray-700 gap-12'
+      >
+        <div className='text-md font-semibold h-full w-1/3 flex justify-evenly items-start flex-col'>
+          <div className={contactInfo}>
+            <p>Email:</p>
+            <p>code@path.org</p>
+          </div>
+          <div className={contactInfo}>
+            <p>Phone:</p>
+            <p>1-800-CODEPATH</p>
+          </div>
+          <div className={contactInfo}>
+            <p>Address:</p>
+            <div>
+              <p>
+                123, Fake Street
+                <br />
+                San Francisco, CA
+              </p>
+            </div>
+          </div>
+        </div>
+        <img src={GirlModel} alt='' className='h-full mt-5' />
       </div>
     </div>
   );

@@ -7,3 +7,6 @@ export const utilityButtons =
   'flex justify-center items-center h-auto w-[10%] border border-green-500 rounded-lg gap-1 cursor-pointer duration-200 hover:bg-green-100';
 
 export const aboutP = 'text-gray-500 text-2xl';
+
+export const contactInfo =
+  'flex w-full justify-between items-centerß text-white font-medium text-xl';
