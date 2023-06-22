@@ -3,7 +3,7 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 
 const CardItem = ({ props }) => {
   return (
-    <div className='h-[400px] bg-gray-100 duration-200 hover:bg-slate-200 flex flex-col justify-center p-2 rounded-lg gap-2 relative'>
+    <div className='h-[400px] bg-gray-100 duration-200 hover:bg-slate-200 flex flex-col justify-center p-2 rounded-lg gap-2 relative cursor-pointer'>
       <div className='w-full h-1/2 flex justify-center items-start'>
         <img
           src={props.image}

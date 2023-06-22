@@ -13,6 +13,7 @@ import {
   Input,
   Stack,
   Flex,
+  filter,
 } from '@chakra-ui/react';
 import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
@@ -28,27 +29,33 @@ export default function Home() {
     {
       title: 'All Categories',
       index: 1,
+      category: null,
     },
     {
       title: 'Clothing',
       index: 2,
+      category: 'clothing',
     },
     {
       title: 'Food',
       index: 3,
+      category: 'food',
     },
     {
       title: 'Accessories',
       index: 4,
+      category: 'accessories',
     },
     {
       title: 'Tech',
       index: 5,
+      category: 'tech',
     },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(options[0]);
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -56,6 +63,7 @@ export default function Home() {
         'https://codepath-store-api.herokuapp.com/store'
       );
       setProducts(response.data.products);
+      setFilteredProducts(response.data.products);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -67,6 +75,15 @@ export default function Home() {
 
   const handleOptionClick = (option) => {
     setSelectedCategory(option);
+    if (option.category === null) {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter(
+        (product) => product.category === option.category
+      );
+      console.log(filtered, 'hola');
+      setFilteredProducts(filtered);
+    }
   };
 
   return (
@@ -118,8 +135,10 @@ export default function Home() {
         id='products-grid'
         className='w-2/3 grid grid-cols-4 gap-4 justify-self-center m-4'
       >
-        {products.length > 0 ? (
-          products.map((product) => <Card key={product.id} props={product} />)
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <Card key={product.id} props={product} />
+          ))
         ) : (
           <p className='text-3xl font-bold'>Loading...</p>
         )}
