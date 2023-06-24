@@ -25,7 +25,7 @@ import GirlModel from '../../assets/images/student.png';
 import Footer from './homeComponents/Footer';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home({ addToCart, removeFromCart }) {
+export default function Home({ addToCart, removeFromCart, resetQty }) {
   const options = [
     {
       title: 'All Categories',
@@ -189,6 +189,7 @@ export default function Home({ addToCart, removeFromCart }) {
               goToProduct={goToProduct}
               addToCart={addToCart}
               removeFromCart={removeFromCart}
+              resetQty={resetQty}
             />
           ))
         ) : (

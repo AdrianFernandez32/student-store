@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 
-const Sidebar = ({ subtotal, tax, total, cart, purchase }) => {
+const Sidebar = ({ subtotal, tax, total, cart, purchase, resetQuantity }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -60,7 +60,10 @@ const Sidebar = ({ subtotal, tax, total, cart, purchase }) => {
             </div>
             <button
               className='bg-black text-white font-bold mt-4 p-2 rounded-md'
-              onClick={() => purchase()}
+              onClick={() => {
+                purchase();
+                resetQuantity();
+              }}
             >
               Purchase now!
             </button>

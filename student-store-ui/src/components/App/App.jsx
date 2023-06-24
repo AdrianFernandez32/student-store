@@ -13,6 +13,7 @@ export default function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
+  const [resetQty, setResetQty] = useState(false);
   const toast = useToast();
 
   useEffect(() => {
@@ -22,6 +23,19 @@ export default function App() {
     };
     calculateTotal();
   }, [cart]);
+
+  const resetQuantity = () => {
+    setResetQty(true);
+  };
+
+  useEffect(() => {
+    if (resetQty) {
+      setCart(new Map());
+      setTax(0);
+      setSubtotal(0);
+      setResetQty(false);
+    }
+  }, [resetQty]);
 
   const scrollToSection = () => {
     scroller.scrollTo('sectionId', {
@@ -85,6 +99,7 @@ export default function App() {
           total={total}
           cart={cart}
           purchase={purchase}
+          resetQuantity={resetQuantity}
         />
         <main className='main-content'>
           <Navbar />
@@ -96,6 +111,7 @@ export default function App() {
                   removeFromCart={removeFromCart}
                   addToCart={addToCart}
                   scrollToSection={scrollToSection}
+                  resetQty={resetQty}
                 />
               }
             />
