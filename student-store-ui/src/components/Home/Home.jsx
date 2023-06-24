@@ -91,17 +91,25 @@ export default function Home({ addToCart, removeFromCart }) {
         setShowingProducts(filtered);
       }
     } else {
-      const filteredCategory = products.filter(
-        (product) => product.category === option.category
-      );
-      setFilteredProducts(filteredCategory);
-
-      const filtered = filteredCategory.filter(
-        (product) =>
-          product.category === option.category &&
+      if (option.category === null) {
+        setFilteredProducts(products);
+        const filtered = products.filter((product) =>
           product.name.toLowerCase().includes(search.toLowerCase())
-      );
-      setShowingProducts(filtered);
+        );
+        setShowingProducts(filtered);
+      } else {
+        const filteredCategory = products.filter(
+          (product) => product.category === option.category
+        );
+        setFilteredProducts(filteredCategory);
+
+        const filtered = filteredCategory.filter(
+          (product) =>
+            product.category === option.category &&
+            product.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setShowingProducts(filtered);
+      }
     }
   };
 
