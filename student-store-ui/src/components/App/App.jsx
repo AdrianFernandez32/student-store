@@ -23,6 +23,13 @@ export default function App() {
     calculateTotal();
   }, [cart]);
 
+  const scrollToSection = () => {
+    scroller.scrollTo('sectionId', {
+      duration: 500, // Scroll duration in milliseconds
+      smooth: 'easeInOutQuart', // Scroll animation easing
+    });
+  };
+
   const addToCart = (product) => {
     if (cart.has(product.name)) {
       const existingProduct = cart.get(product.name);
@@ -85,7 +92,11 @@ export default function App() {
             <Route
               path='/'
               element={
-                <Home removeFromCart={removeFromCart} addToCart={addToCart} />
+                <Home
+                  removeFromCart={removeFromCart}
+                  addToCart={addToCart}
+                  scrollToSection={scrollToSection}
+                />
               }
             />
             <Route path='/product/:id' element={<ProductView />} />
