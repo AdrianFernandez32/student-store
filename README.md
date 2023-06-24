@@ -27,9 +27,13 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [x] Implemented animations for better user experience
-- [x] Navbar buttons takes you to the right sections
 - [x] You can purchase products (they get deleted and shows a toast)
 - [x] A label on the card component tells you how many products (of that specific product) are inside of the cart.
+
+<a href="https://www.loom.com/share/046c186897d1463a9c64825851febdc0">
+    <p>Re: Loom Message - 23 June 2023 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/046c186897d1463a9c64825851febdc0-with-play.gif">
+  </a>
 
 ## _Week 3_ Application Features
 
