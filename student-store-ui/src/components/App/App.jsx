@@ -14,6 +14,10 @@ export default function App() {
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
   const [resetQty, setResetQty] = useState(false);
+  const [prevTax, setPrevTax] = useState(0);
+  const [prevTotal, setPrevTotal] = useState(0);
+  const [prevSubtotal, setPrevSubtotal] = useState(0);
+  const [recentPurchase, setRecentPurchase] = useState(new Map());
   const toast = useToast();
 
   useEffect(() => {
@@ -78,16 +82,30 @@ export default function App() {
   };
 
   const purchase = () => {
-    setCart(new Map());
-    setTax(0);
-    setSubtotal(0);
-    toast({
-      title: 'Purchase completed',
-      description: 'The items will be sent to your address',
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    });
+    if (cart.size > 0) {
+      setPrevTax(tax);
+      setPrevTotal(total);
+      setPrevSubtotal(subtotal);
+      setRecentPurchase(cart);
+      setCart(new Map());
+      setTax(0);
+      setSubtotal(0);
+      toast({
+        title: 'Purchase completed',
+        description: 'The items will be sent to your address',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: `You haven't add nothing to the cart yet`,
+        description: `Make sure you have selected your products before puchasing`,
+        status: `error`,
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -100,6 +118,10 @@ export default function App() {
           cart={cart}
           purchase={purchase}
           resetQuantity={resetQuantity}
+          recentPurchase={recentPurchase}
+          prevTax={prevTax}
+          prevTotal={prevTotal}
+          prevSubtotal={prevSubtotal}
         />
         <main className='main-content'>
           <Navbar />
