@@ -60,6 +60,15 @@ export default function App() {
       };
       cart.set(product.name, newProduct);
     }
+
+    // if (!cart.has(product.name)) {
+    //   // add with 0
+    // }
+
+    // const existingProduct = cart.get(product.name);
+    //   existingProduct.qty++;
+    //   cart.set(product.name, existingProduct);
+
     setSubtotal(subtotal + product.price);
     setTax(tax + product.price * 0.08);
     setCart(new Map(cart));
@@ -77,7 +86,6 @@ export default function App() {
       setSubtotal(subtotal - product.price);
       setTax(tax - product.price * 0.08);
     }
-    console.log(cart);
     setCart(new Map(cart));
   };
 
