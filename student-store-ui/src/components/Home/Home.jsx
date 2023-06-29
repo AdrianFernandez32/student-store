@@ -7,14 +7,7 @@ import {
   contactInfo,
 } from '../../assets/styles';
 import merchIcon from '../../assets/images/merchandise.png';
-import {
-  InputGroup,
-  InputLeftElement,
-  Input,
-  Stack,
-  Flex,
-  filter,
-} from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
 import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
 import Categories from './homeComponents/CategoriesMenu';

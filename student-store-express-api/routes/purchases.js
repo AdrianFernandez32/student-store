@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { storage } = require('../data/storage');
+const { v4: uuidv4 } = require('uuid');
+
+function generateUniqueId() {
+  return uuidv4();
+}
 
 router.get('/', (req, res) => {
   const items = storage.get('purchases').value();
@@ -21,10 +26,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { items, date, email, buyerName } = req.body;
+  const { items, date, email, buyerName, tax, subtotal, total } = req.body;
 
-  if (!items || !date || !email || !buyerName) {
-    return res.status(400).json({ error: `You're missing one or more camps` });
+  if (!items || !date || !email || !buyerName || !tax || !subtotal || !total) {
+    return res.status(400).json({ error: `You're missing one or more fields` });
   }
 
   const newPurchase = {
@@ -33,6 +38,9 @@ router.post('/', (req, res) => {
     date,
     email,
     buyerName,
+    tax,
+    subtotal,
+    total,
   };
 
   storage.get('purchases').push(newPurchase).write();
