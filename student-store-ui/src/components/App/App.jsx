@@ -8,6 +8,8 @@ import ProductView from '../Product/ProductView';
 import './App.css';
 import { useToast } from '@chakra-ui/react';
 import axios from 'axios';
+import Orders from '../Orders/Orders';
+import SingleOrder from '../SingleOrder/SingleOrder';
 
 export default function App() {
   const [cart, setCart] = useState(new Map());
@@ -171,6 +173,8 @@ export default function App() {
               }
             />
             <Route path='/product/:id' element={<ProductView />} />
+            <Route path='/orders' element={<Orders />} />
+            <Route path='/order/:id' element={<SingleOrder />} />
           </Routes>
         </main>
       </BrowserRouter>

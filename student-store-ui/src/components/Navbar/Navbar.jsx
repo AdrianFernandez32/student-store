@@ -18,6 +18,14 @@ export default function Navbar() {
       />
       <ul className='flex justify-around items-center w-1/3'>
         <li className={listItem}>Home</li>
+        <li
+          className={listItem}
+          onClick={() => {
+            navigate('/orders');
+          }}
+        >
+          Orders
+        </li>
         <li className={listItem}>About Us</li>
         <li className={listItem}>Contact Us</li>
         <li className={listItem}>Buy Now</li>

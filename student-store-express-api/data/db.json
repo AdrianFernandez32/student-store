@@ -147,58 +147,12 @@
   ],
   "purchases": [
     {
-      "id": "8a4d0aff-690d-4c00-a691-f36a5235c527",
-      "items": {},
-      "date": 1688000714683,
-      "email": "holacomoteva@meta.com",
-      "buyerName": "Juanito Perez",
-      "tax": 0.23920000000000002,
-      "subtotal": 2.99,
-      "total": 3.2292
-    },
-    {
-      "id": "53c951d1-36ce-4873-aae8-1f95f631bfc3",
-      "items": {},
-      "date": 1688000795275,
-      "email": "adrianfersa@meta.com",
-      "buyerName": "Adrian Fersa",
-      "tax": 0.26,
-      "subtotal": 3.25,
-      "total": 3.51
-    },
-    {
-      "id": "99c012d5-dbe5-4f76-8351-b542116ed510",
-      "items": {},
-      "date": 1688001054410,
-      "email": "daniel@meta.com",
-      "buyerName": "Daniel Barocio",
-      "tax": 2.5776,
-      "subtotal": 32.22,
-      "total": 34.797599999999996
-    },
-    {
-      "id": "073ac14c-1c96-45c6-b959-f96e446f8c93",
-      "items": {},
-      "date": 1688002450737,
-      "email": "hello@meta.com",
-      "buyerName": "Johnatan si",
-      "tax": 0.36,
-      "subtotal": 4.5,
-      "total": 4.86
-    },
-    {
-      "id": "9ef54a58-b12a-4544-88f1-3d33e062995c",
+      "id": "3666a4a3-bcaa-4afb-8d93-40a94b73e482",
       "items": [
         {
-          "id": 2,
-          "name": "Flamin Hot Cheetos",
-          "price": 1.5,
-          "qty": 1
-        },
-        {
-          "id": 1,
-          "name": "Rice Krispies",
-          "price": 0.99,
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
           "qty": 1
         },
         {
@@ -208,12 +162,52 @@
           "qty": 1
         }
       ],
-      "date": 1688002703735,
+      "date": 1688003144876,
       "email": "example@meta.com",
       "buyerName": "John Doe",
-      "tax": 0.4384,
-      "subtotal": 5.48,
-      "total": 5.9184
+      "tax": 0.49920000000000003,
+      "subtotal": 6.24,
+      "total": 6.7392
+    },
+    {
+      "id": "0a47e3f4-8f9d-4b4f-9398-92682981b479",
+      "items": [
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688003603284,
+      "email": "adrian.fersa@gmail.com",
+      "buyerName": "Dummy Guy",
+      "tax": 0.49920000000000003,
+      "subtotal": 6.24,
+      "total": 6.7392
+    },
+    {
+      "id": "e7ec4f46-e757-43e4-996b-b0bc0f16af64",
+      "items": [
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688163229344,
+      "email": "fuckingfacker",
+      "buyerName": "hola",
+      "tax": 0.23920000000000002,
+      "subtotal": 2.99,
+      "total": 3.2292
     }
   ]
 }
