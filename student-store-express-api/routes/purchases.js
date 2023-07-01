@@ -48,4 +48,18 @@ router.post('/', (req, res) => {
   res.status(201).json(newPurchase);
 });
 
+router.delete('/:id', (req, res) => {
+  const purchaseId = req.params.id;
+
+  const purchase = storage.get('purchases').find({ id: purchaseId }).value();
+
+  if (!purchase) {
+    return res.status(404).json({ error: 'Purchase not found' });
+  }
+
+  storage.get('purchases').remove({ id: purchaseId }).write();
+
+  res.status(200).json({ message: 'Purchase deleted successfully' });
+});
+
 module.exports = router;
