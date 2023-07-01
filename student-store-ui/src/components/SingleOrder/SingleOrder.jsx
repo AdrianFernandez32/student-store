@@ -11,6 +11,7 @@ const SingleOrder = () => {
   const fetchOrder = async () => {
     try {
       const response = await axios.get(`http://localhost:3001/purchases/${id}`);
+      // I can improve it with promise.all
       setOrder(response.data);
       console.log(response.data);
     } catch (error) {
