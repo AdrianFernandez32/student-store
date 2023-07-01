@@ -53,3 +53,4 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
 - [x] Created and endpoint for deleting purchases (just wanted to try creating a delete endpoint)
 - [x] The individual order displays details of the products (Does a get for each product) using endpoints.
+- [x] Added a spinning wheel when content is loading in Orders and ProductView
