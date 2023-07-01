@@ -55,4 +55,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] The individual order displays details of the products (Does a get for each product) using endpoints.
 - [x] Added a spinning wheel when content is loading in Orders and ProductView
 
-<div style="position: relative; padding-bottom: 53.43750000000001%; height: 0;"><iframe src="https://www.loom.com/embed/a231325fbfab43aebfb1934ecccef000?sid=84e7539f-3b35-46b9-ab07-c26853c82196" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<a href="https://www.loom.com/share/a231325fbfab43aebfb1934ecccef000">
+    <p>Library | Loom - 30 June 2023 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/a231325fbfab43aebfb1934ecccef000-with-play.gif">
+  </a>
